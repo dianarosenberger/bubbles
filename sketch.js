@@ -1,11 +1,13 @@
-var bubbles = [];
+var myBubble = new Bubble(100, 100);
+myBubble.speed.x = 2;
+myBubble.speed.y = 2;
 
 setup = function () {
-  createCanvas(600, 600);
-  // your code goes here
+  createCanvas(600, 400);
 };
 
 draw = function () {
-  background(0);
-  // your code goes here
+  background(100);
+  myBubble.update();
+  myBubble.display();
 };
