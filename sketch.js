@@ -1,3 +1,4 @@
+
 var bubblepit = [];
 
 
@@ -18,6 +19,6 @@ draw = function () {
 var iterateWithForLoop = function (numberOfBubbles) {
   for (var i = 0; i < numberOfBubbles; ++i) {
     bubblepit.push (new Bubble (random(0, width-10), random(10, height - 10)));
-
+    //updateAndDisplay(array[i]);
   }
 };
