@@ -1,7 +1,7 @@
 var Bubble = function(x, y) {
   this.x = x;
   this.y = y;
-
+  this.speed = {x: 1, y: 1};
 };
 
 Bubble.prototype = {
@@ -20,42 +20,4 @@ Bubble.prototype = {
     ellipse(this.x, this.y, this.radius * 2, this.radius * 2);
   },
 
-
-};
-
-var bubblepit = [];
-
-var updateAndDisplay = function(bubble) {
-  bubble.update();
-  bubble.display();
-};
-
-setup = function() {
-  createCanvas(600, 400);
-};
-
-draw = function () {
-  background(0);
-  //iterateFunctionally(ballpit);
-  //iterateWithWhileLoop(ballpit);
-  iterateWithForLoop(bubblepit);
-  if (mouseIsPressed) bubblepit.push(new Bubble(mouseX, mouseY));
-};
-
-var iterateFunctionally = function (array) {
-  array.forEach(updateAndDisplay);
-};
-
-var iterateWithWhileLoop = function (array) {
-  var index = 0;
-  while (index < array.length) {
-    updateAndDisplay(array[index]);
-    ++index;
-  }
-};
-
-var iterateWithForLoop = function (array) {
-  for (var i = 0; i < array.length; ++i) {
-    updateAndDisplay(array[i]);
-  }
 };
