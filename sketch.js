@@ -1,23 +1,26 @@
-var bubblepit = [];
+var snowfall = [];
 
+//var myBubble = new Bubble(100, 100);
+//myBubble.speed.x = 2;
+//myBubble.speed.y = 2;
 
 setup = function () {
   createCanvas(600, 400);
-  drawNumberOfBubbles(500);
+  iterateWithForLoop(500);
 };
 
 draw = function () {
   background(100);
-for (var i = 0; i < bubblepit.length; ++i) {
-  bubblepit[i].display();
-  bubblepit[i].update();
-}
 
+  snowfall.forEach(function updateAndDisplay(Snow) {
+    Snow.display();
+    Snow.update();
+  });
 };
 
-var drawNumberOfBubbles = function (numberOfBubbles) {
-  for (var i = 0; i < numberOfBubbles; ++i) {
-    bubblepit.push (new Bubble (random(0, width-10), random(10, height - 10)));
-
+var iterateWithForLoop = function (numberOfSnow) {
+  for (var i = 0; i < numberOfSnow; ++i) {
+    snowfall.push (new Snow (random(0, width-10), random(10, height - 10)));
+    //updateAndDisplay(array[i]);
   }
 };
